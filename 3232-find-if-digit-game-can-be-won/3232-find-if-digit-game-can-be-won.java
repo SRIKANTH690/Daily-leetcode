@@ -10,7 +10,11 @@ class Solution {
                 dou+= num;
             }
         }
-        return single != dou;
+        if(single == dou){
+            return false;
+        }
+        return true;
+ 
         
     }
 }
