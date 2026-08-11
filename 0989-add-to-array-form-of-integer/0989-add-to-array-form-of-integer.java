@@ -43,7 +43,23 @@ class Solution {
             res.add(k%10);
             k = k /10;
         }
-        Collections.reverse(res);
+
+        int left = 0;
+        int right = res.size()-1;
+
+        while(left < right){
+            int temp = res.get(left);
+            res.set(left , res.get(right));
+            res.set(right , temp);
+            left++;
+            right--;
+        }
+
         return res;
+
+
+
+        // Collections.reverse(res);
+        // return res;
     }
 }
