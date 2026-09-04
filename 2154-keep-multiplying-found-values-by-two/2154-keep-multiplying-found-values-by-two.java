@@ -15,23 +15,50 @@
         //     }
         // }
         // return original;
+    //     }
+    // }
+
+// import java.util.HashSet;
+// class Solution {
+//     public int findFinalValue(int[] nums, int original) {
+
+//         HashSet<Integer> set = new HashSet<>();
+
+//         for (int num : nums) {
+//             set.add(num);
+//         }
+
+//         while (set.contains(original)) {
+//             original = original * 2;
+//         }
+
+//         return original;
+//     }
+// }
 
 
-        import java.util.HashSet;
+
 
 class Solution {
     public int findFinalValue(int[] nums, int original) {
 
-        HashSet<Integer> set = new HashSet<>();
 
-        for (int num : nums) {
-            set.add(num);
+        while(true){
+            boolean found = false;
+
+            for(int num : nums){
+                if( num == original){
+                    found = true;
+                    break;
+                }
+            }
+
+            if(found){
+                original *= 2;
+            }else{
+                break;
+            }
         }
-
-        while (set.contains(original)) {
-            original = original * 2;
-        }
-
         return original;
     }
 }
